@@ -28,6 +28,7 @@
 
 ### docker-compose 관련 디렉토리 생성.
 
+mkdir -p /raid/kafka-cluster/zookeeper/zoo1/conf
 mkdir -p /raid/kafka-cluster/zookeeper/zoo1/data
 mkdir -p /raid/kafka-cluster/zookeeper/zoo1/log
 mkdir -p /raid/kafka-cluster/broker1/data

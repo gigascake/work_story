@@ -1,3 +1,4 @@
+mkdir -p /raid/kafka-cluster/zookeeper/zoo1/conf
 mkdir -p /raid/kafka-cluster/zookeeper/zoo1/data
 mkdir -p /raid/kafka-cluster/zookeeper/zoo1/log
 mkdir -p /raid/kafka-cluster/broker1/data
@@ -17,6 +18,8 @@ docker stop connect
 docker stop ksqldb-server 
 docker stop ksqldb-cli
 docker stop ksql-datagen
+docker stop control-center
+docker stop rest-proxy
 
 docker container rm zookeeper1 
 docker container rm broker1 
@@ -25,4 +28,6 @@ docker container rm connect
 docker container rm ksqldb-server 
 docker container rm ksqldb-cli
 docker container rm ksql-datagen
+docker container rm control-center
+docker container rm rest-proxy
 

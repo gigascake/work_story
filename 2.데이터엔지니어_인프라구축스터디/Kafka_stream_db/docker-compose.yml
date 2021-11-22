@@ -11,6 +11,7 @@
           ZOOKEEPER_CLIENT_PORT: 2181
           ZOOKEEPER_TICK_TIME: 2000
         volumes:
+          - /raid/kafka-cluster/zookeeper/zoo1/conf:/etc/kafka
           - /raid/kafka-cluster/zookeeper/zoo1/data:/var/lib/zookeeper/data
           - /raid/kafka-cluster/zookeeper/zoo1/log:/var/lib/zookeeper/log
             
