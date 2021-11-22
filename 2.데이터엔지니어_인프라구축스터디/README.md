@@ -68,17 +68,17 @@ docker-compose up -d
 
 
 # docker ps -a
-CONTAINER ID   IMAGE                                             COMMAND                  CREATED          STATUS          
-7af6e1c295f8   confluentinc/ksqldb-examples:7.0.0                "bash -c 'echo Waiti…"   14 minutes ago   Up 14 minutes   
-1f0d9b74ba59   confluentinc/cp-enterprise-control-center:7.0.0   "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
-c6545b12d2ff   confluentinc/cp-ksqldb-cli:7.0.0                  "/bin/bash"              14 minutes ago   Up 14 minutes   
-fe616e7a9673   confluentinc/cp-ksqldb-server:7.0.0               "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
-8eb5f6fac82b   cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0   "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
-f23f631c909b   confluentinc/cp-kafka-rest:7.0.0                  "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
-25d7165d8a26   confluentinc/cp-schema-registry:7.0.0             "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
-324af21eb7f9   confluentinc/cp-kafka:7.0.0                       "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
-ab59ab49b5fe   confluentinc/cp-kafka:7.0.0                       "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
-61ce868a9d31   confluentinc/cp-kafka:7.0.0                       "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
-7a710a4f72a5   confluentinc/cp-zookeeper:7.0.0                   "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
-root@devcenter:/home/kafka/confluent-docker# 
+#### CONTAINER ID   IMAGE                                             COMMAND                  CREATED          STATUS          
+#### 7af6e1c295f8   confluentinc/ksqldb-examples:7.0.0                "bash -c 'echo Waiti…"   14 minutes ago   Up 14 minutes   
+#### 1f0d9b74ba59   confluentinc/cp-enterprise-control-center:7.0.0   "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
+#### c6545b12d2ff   confluentinc/cp-ksqldb-cli:7.0.0                  "/bin/bash"              14 minutes ago   Up 14 minutes   
+#### fe616e7a9673   confluentinc/cp-ksqldb-server:7.0.0               "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
+#### 8eb5f6fac82b   cnfldemos/cp-server-connect-datagen:0.5.0-6.2.0   "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
+#### f23f631c909b   confluentinc/cp-kafka-rest:7.0.0                  "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
+#### 25d7165d8a26   confluentinc/cp-schema-registry:7.0.0             "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
+#### 324af21eb7f9   confluentinc/cp-kafka:7.0.0                       "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
+#### ab59ab49b5fe   confluentinc/cp-kafka:7.0.0                       "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
+#### 61ce868a9d31   confluentinc/cp-kafka:7.0.0                       "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
+#### 7a710a4f72a5   confluentinc/cp-zookeeper:7.0.0                   "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
+
 
