@@ -9,3 +9,59 @@
 ## 4) 카프카 성능 테스트하는 방법을 준비한다.
 ## 5) 주식데이터를 저장한다.
 ## 6) 국내주식데이터를 모두넣어보고 Topic의 개수가 어느정도늘어나는 시점에서 카프카의 성능이 느려지는지 확인한다.
+
+
+
+## TEST환경 서버.
+### 1) Kafka Streamining Database 환경.
+####  CPU : AMD 5950x
+####  RAM : 128G
+####  SSD : 10TB + 512G
+
+#### docker run으로는 자원제한이 가능한데 docker-compose로 자원제한하는 법은 모르겠다.
+####  kafka Node당 각 : RAM 24G, 2TB 할당.
+####  schema-registry : RAM 12G, 1TB 할당.
+####  zookeeper1 : 8G, 64G 할당.
+####  나머지 6개노드  : Active
+
+
+
+### docker-compose 관련 디렉토리 생성.
+
+mkdir -p /raid/kafka-cluster/zookeeper/zoo1/data
+mkdir -p /raid/kafka-cluster/zookeeper/zoo1/log
+mkdir -p /raid/kafka-cluster/broker1/data
+mkdir -p /raid/kafka-cluster/broker2/data
+mkdir -p /raid/kafka-cluster/broker3/data
+mkdir -p /raid/kafka-cluster/control-center/data
+mkdir -p /raid/kafka-cluster/broker1/conf
+mkdir -p /raid/kafka-cluster/broker2/conf
+mkdir -p /raid/kafka-cluster/broker3/conf
+chown -R hadoop:hadoop /raid/kafka-cluster
+
+### docker-compose 구성실패시 초기화
+
+docker stop zookeeper1 
+docker stop broker1 
+docker stop schema-registry 
+docker stop connect 
+docker stop ksqldb-server 
+docker stop ksqldb-cli
+docker stop ksql-datagen
+docker stop control-center
+docker stop rest-proxy
+
+docker container rm zookeeper1 
+docker container rm broker1 
+docker container rm schema-registry 
+docker container rm connect 
+docker container rm ksqldb-server 
+docker container rm ksqldb-cli
+docker container rm ksql-datagen
+docker container rm control-center
+docker container rm rest-proxy
+
+### docker-compose 실행
+docker-compose up -d
+
+
