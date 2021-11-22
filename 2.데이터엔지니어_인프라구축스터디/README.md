@@ -12,7 +12,7 @@
 
 
 
-## TEST환경 서버.
+## 2. TEST환경 서버.
 ### 1) Kafka Streamining Database 환경.
 ####  CPU : AMD 5950x
 ####  RAM : 128G
@@ -26,7 +26,7 @@
 
 
 
-### docker-compose 관련 디렉토리 생성.
+### 3. docker-compose 관련 디렉토리 생성.
 
 #### mkdir -p /raid/kafka-cluster/zookeeper/zoo1/conf
 #### mkdir -p /raid/kafka-cluster/zookeeper/zoo1/data
@@ -40,7 +40,7 @@
 #### mkdir -p /raid/kafka-cluster/broker3/conf
 #### chown -R hadoop:hadoop /raid/kafka-cluster
 
-### docker-compose 구성실패시 초기화
+### 4. docker-compose 구성실패시 초기화
 
 #### docker stop zookeeper1 
 #### docker stop broker1 
@@ -62,12 +62,12 @@
 #### docker container rm control-center
 #### docker container rm rest-proxy
 
-### docker-compose 실행
+### 5. docker-compose 실행
 docker-compose up -d
 
 
 
-# docker ps -a
+# 6. docker ps -a
 #### CONTAINER ID   IMAGE                                             COMMAND                  CREATED          STATUS          
 #### 7af6e1c295f8   confluentinc/ksqldb-examples:7.0.0                "bash -c 'echo Waiti…"   14 minutes ago   Up 14 minutes   
 #### 1f0d9b74ba59   confluentinc/cp-enterprise-control-center:7.0.0   "/etc/confluent/dock…"   14 minutes ago   Up 14 minutes   
