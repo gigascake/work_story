@@ -26,8 +26,9 @@
 
 
 
-### 3. docker-compose 관련 디렉토리 생성.
+### 3. docker-compose 관련 디렉토리 생성. (분산디스크 구축완료: B550보드라 GEN4 NVME 2개만 장착할 수 있다. B550칩셋이 최신칩셋이라고 태깅하고 있는 다나와 관계자들 미워요.)
 
+#### ( X570 보드를 사느냐, PCI-NVMe컨버터로 남은 GEN3 nvme를 추가장착가능하느냐 기로에 서있다. NVME GEN4 하나 남는다. 개봉했다. ㅠ - [2021-11-24] )
 #### mkdir -p /raid03/kafka-cluster/zookeeper/zoo1/conf
 #### mkdir -p /raid03/kafka-cluster/zookeeper/zoo1/data
 #### mkdir -p /raid03/kafka-cluster/zookeeper/zoo1/log
@@ -85,3 +86,6 @@ docker-compose up -d
 #### 7a710a4f72a5   confluentinc/cp-zookeeper:7.0.0                   "/etc/confluent/dock…"   43 minutes ago   Up 43 minutes   
 
 
+# 7. Streams API와 Ksql 사용법 정리
+#### 1) Streams API는 Streams에 대해 필터의 역할이 대부분인거 같다.기존에 Telegraf와 Logstash를 사용할줄 아는 나에게 있어, 용도의 차이는 그닥 없어 보인다. 성능의 차이는 추후 확인해봐야겠다.
+#### 2) Ksql은 ksql-python 라이브러리로 파이썬에서도 제어가 가능하다. 얼마만큼 기존 SQL을 대체할 수 있는지는 사용하면서 차이점을 비교해봐야겠다.
