@@ -28,17 +28,20 @@
 
 ### 3. docker-compose 관련 디렉토리 생성.
 
-#### mkdir -p /raid/kafka-cluster/zookeeper/zoo1/conf
-#### mkdir -p /raid/kafka-cluster/zookeeper/zoo1/data
-#### mkdir -p /raid/kafka-cluster/zookeeper/zoo1/log
-#### mkdir -p /raid/kafka-cluster/broker1/data
-#### mkdir -p /raid/kafka-cluster/broker2/data
-#### mkdir -p /raid/kafka-cluster/broker3/data
-#### mkdir -p /raid/kafka-cluster/control-center/data
-#### mkdir -p /raid/kafka-cluster/broker1/conf
-#### mkdir -p /raid/kafka-cluster/broker2/conf
-#### mkdir -p /raid/kafka-cluster/broker3/conf
-#### chown -R hadoop:hadoop /raid/kafka-cluster
+#### mkdir -p /raid03/kafka-cluster/zookeeper/zoo1/conf
+#### mkdir -p /raid03/kafka-cluster/zookeeper/zoo1/data
+#### mkdir -p /raid03/kafka-cluster/zookeeper/zoo1/log
+#### mkdir -p /raid01/kafka-cluster/broker1/data
+#### mkdir -p /raid02/kafka-cluster/broker2/data
+#### mkdir -p /raid03/kafka-cluster/broker3/data
+#### mkdir -p /raid03/kafka-cluster/control-center/data
+#### mkdir -p /raid01/kafka-cluster/broker1/conf
+#### mkdir -p /raid02/kafka-cluster/broker2/conf
+#### mkdir -p /raid03/kafka-cluster/broker3/conf
+#### chown -R hadoop:hadoop /raid01/kafka-cluster
+#### chown -R hadoop:hadoop /raid02/kafka-cluster
+#### chown -R hadoop:hadoop /raid03/kafka-cluster
+
 
 ### 4. docker-compose 구성실패시 초기화
 
