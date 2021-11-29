@@ -39,6 +39,7 @@
 #### mkdir -p /raid01/kafka-cluster/broker1/conf
 #### mkdir -p /raid02/kafka-cluster/broker2/conf
 #### mkdir -p /raid03/kafka-cluster/broker3/conf
+#### mkdir -p /raid03/kafka-cluster/ksqldb-cli/bin
 #### chown -R hadoop:hadoop /raid01/kafka-cluster
 #### chown -R hadoop:hadoop /raid02/kafka-cluster
 #### chown -R hadoop:hadoop /raid03/kafka-cluster
@@ -89,3 +90,16 @@ docker-compose up -d
 # 7. Streams API와 Ksql 사용법 정리
 #### 1) Streams API는 Streams에 대해 필터의 역할이 대부분인거 같다.기존에 Telegraf와 Logstash를 사용할줄 아는 나에게 있어, 용도의 차이는 그닥 없어 보인다. 성능의 차이는 추후 확인해봐야겠다.
 #### 2) Ksql은 ksql-python 라이브러리로 파이썬에서도 제어가 가능하다. 얼마만큼 기존 SQL을 대체할 수 있는지는 사용하면서 차이점을 비교해봐야겠다.
+#### 3) 정복해야할 KsqlDB Query Usage: 
+#### - https://docs.ksqldb.io/en/latest/reference/sql/appendix/
+
+# 8. HUE 설치
+https://github.com/cloudera/hue/tree/master/tools/docker/hue 
+
+docker run -it -p 8888:8888 gethue/hue:latest
+
+# 8. HUE와 KSQLDB 연동하기.
+
+
+와 9. HUe와 KUDU & Impala연동하기.
+

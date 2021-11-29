@@ -248,6 +248,8 @@
           - connect
           - ksqldb-server
         entrypoint: /bin/bash
+        volumes:
+          - /raid/kafka-cluster/ksqldb-cli/bin:/usr/bin
         tty: true
     
       ksql-datagen:
