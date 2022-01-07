@@ -1,0 +1,208 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Business Frontpage - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href="/">RetHit.com</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Monthly Project</h1>
+                            <p class="lead text-white-50 mb-4">Boston House Prices-Advanced Regression Techniques</p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">EDA</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="https://github.com/gigascake/work_story">GitHub</a>
+                                <a class="btn btn-outline-light btn-lg px-4" href="https://www.kaggle.com/fedesoriano/the-boston-houseprice-data">Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Features section-->
+        <section class="py-5 border-bottom" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i></div>
+                        <h2 class="h4 fw-bolder">1. Data Analysis</h2>
+                        <p>Kaggle로부터 데이터를 받아, 데이터의 특성을 파악한다.</p>
+                        <a class="text-decoration-none" href="#topic_one">
+                            Call to action
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i></div>
+                        <h2 class="h4 fw-bolder">3. 가설 검증</h2>
+                        <p>다양한 plot을 통해 가설을 검증한다.</p>
+                        <a class="text-decoration-none" href="#topic_3th">
+                            Call to action
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i></div>
+                        <h2 class="h4 fw-bolder">2. 가설 수립</h2>
+                        <p>상관계수를 바탕으로 가설을 수립한다.</p>
+                        <a class="text-decoration-none" href="#topic_two">
+                            Call to action
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials section-->
+        <section class="py-5 border-bottom" id="topic_one">
+            <div class="container px-5 my-5 px-5">
+                <h2 class="fw-bolder">1. 데이터 분석 </h2>
+                <div class="text-decoration-none">                    
+                    <div data-include-path="/topic_one""></div>
+                    <script>
+                
+                        window.addEventListener('load', function() {
+                            var allElements = document.getElementsByTagName('*');
+                            Array.prototype.forEach.call(allElements, function(el) {
+                                var includePath = el.dataset.includePath;
+                                if (includePath) {
+                                    var xhttp = new XMLHttpRequest();
+                                    xhttp.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                            el.outerHTML = this.responseText;
+                                        }
+                                    };
+                                    xhttp.open('GET', includePath, true);
+                                    xhttp.send();
+                                }
+                            });
+                        });
+                
+                    </script>
+                </div>
+                <a class="fw-bolder" href="#features">
+                    Back to Main
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Testimonials section-->
+        <section class="py-5 border-bottom" id="topic_two">
+            <div class="container px-5 my-5 px-5">
+                <h2 class="fw-bolder">2. 가설 수립 </h2>
+                <div class="text-decoration-none">                    
+                    <div data-include-path="/topic_two""></div>
+                    <script>
+                
+                        window.addEventListener('load', function() {
+                            var allElements = document.getElementsByTagName('*');
+                            Array.prototype.forEach.call(allElements, function(el) {
+                                var includePath = el.dataset.includePath;
+                                if (includePath) {
+                                    var xhttp = new XMLHttpRequest();
+                                    xhttp.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                            el.outerHTML = this.responseText;
+                                        }
+                                    };
+                                    xhttp.open('GET', includePath, true);
+                                    xhttp.send();
+                                }
+                            });
+                        });
+                
+                    </script>
+                </div>
+                <a class="fw-bolder" href="#features">
+                    Back to Main
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Testimonials section-->
+        <section class="py-5 border-bottom" id="topic_3th">
+            <div class="container px-5 my-5 px-5">
+                <h2 class="fw-bolder">3. 가설 검증 </h2>
+                <div class="text-decoration-none">                    
+                    <div data-include-path="/topic_3th""></div>
+                    <script>
+                
+                        window.addEventListener('load', function() {
+                            var allElements = document.getElementsByTagName('*');
+                            Array.prototype.forEach.call(allElements, function(el) {
+                                var includePath = el.dataset.includePath;
+                                if (includePath) {
+                                    var xhttp = new XMLHttpRequest();
+                                    xhttp.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                            el.outerHTML = this.responseText;
+                                        }
+                                    };
+                                    xhttp.open('GET', includePath, true);
+                                    xhttp.send();
+                                }
+                            });
+                        });
+                
+                    </script>
+                </div>
+                <a class="fw-bolder" href="#features">
+                    Back to Main
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Testimonials section-->
+        <section class="py-5 border-bottom">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bolder">Context</h2>
+                    <p class="lead mb-0">The Boston house-price data of Harrison, D. and Rubinfeld, D.L. 'Hedonic prices and the demand for clean air', J. Environ. Economics & Management, vol.5, 81-102, 1978.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact section-->
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; RetHit.com 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="{% static 'js/scripts.js'%}"></script>
+    </body>
+</html>

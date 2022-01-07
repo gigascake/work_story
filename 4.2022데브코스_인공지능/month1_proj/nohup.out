@@ -1,0 +1,43 @@
+Watching for file changes with StatReloader
+[07/Jan/2022 02:53:49] "GET / HTTP/1.0" 200 11115
+Not Found: /js/scripts.js
+[07/Jan/2022 02:53:49] "GET /js/scripts.js HTTP/1.0" 404 2525
+[07/Jan/2022 02:53:49] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:53:49] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:53:49] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:53:49] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:53:49] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:53:49] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:53:49] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:53:49] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:53:49] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:53:59] "GET /about HTTP/1.0" 301 0
+[07/Jan/2022 02:53:59] "GET /about/ HTTP/1.0" 200 9153
+Not Found: /about/js/scripts.js
+[07/Jan/2022 02:54:00] "GET /about/js/scripts.js HTTP/1.0" 404 2543
+Not Found: /about/assets/favicon.ico
+[07/Jan/2022 02:54:00] "GET /about/assets/favicon.ico HTTP/1.0" 404 2558
+[07/Jan/2022 02:54:02] "GET / HTTP/1.0" 200 11115
+Not Found: /js/scripts.js
+[07/Jan/2022 02:54:02] "GET /js/scripts.js HTTP/1.0" 404 2525
+[07/Jan/2022 02:54:02] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:54:02] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:54:02] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:54:02] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:54:02] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:54:02] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:54:02] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:54:02] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:54:02] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:54:09] "GET / HTTP/1.0" 200 11115
+Not Found: /js/scripts.js
+[07/Jan/2022 02:54:09] "GET /js/scripts.js HTTP/1.0" 404 2525
+[07/Jan/2022 02:54:09] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:54:09] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:54:09] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:54:10] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:54:10] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:54:10] "GET /topic_two/ HTTP/1.0" 200 610619
+[07/Jan/2022 02:54:10] "GET /topic_3th/ HTTP/1.0" 200 755016
+[07/Jan/2022 02:54:10] "GET /topic_one/ HTTP/1.0" 200 584715
+[07/Jan/2022 02:54:10] "GET /topic_two/ HTTP/1.0" 200 610619
