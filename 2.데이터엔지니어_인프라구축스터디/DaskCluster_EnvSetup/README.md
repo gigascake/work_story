@@ -27,29 +27,30 @@ dask-sql dash graphistry pycaret xarray-spatial
  
 #### add-on
 *** 전체 add-on 설치시 xgboost dask가 정상동작을 안한다. 문제의 원인파악을 위해 하나씩 설치해서 테스트해본다. 
-문제없음$ pip install dask-pytorch-ddp 
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge skorch 
-충돌남$ conda install -c rapidsai -c nvidia -c conda-forge cuml=22.08
-충돌남$ conda install -c rapidsai -c nvidia -c conda-forge cugraph=22.08
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cuspatial=22.08
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cuxfilter=22.08
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cusignal=22.08
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cucim=22.08
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge dask-sql
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge xarray-spatial 
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge pycaret 
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge graphistry 
-문제없음$ conda install -c rapidsai -c nvidia -c conda-forge dash
+- 문제없음$ pip install dask-pytorch-ddp 
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge skorch 
+- 충돌남$ conda install -c rapidsai -c nvidia -c conda-forge cuml=22.08
+- 충돌남$ conda install -c rapidsai -c nvidia -c conda-forge cugraph=22.08
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cuspatial=22.08
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cuxfilter=22.08
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cusignal=22.08
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge cucim=22.08
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge dask-sql
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge xarray-spatial 
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge pycaret 
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge graphistry 
+- 문제없음$ conda install -c rapidsai -c nvidia -c conda-forge dash
 
 ### 3. 최종정리된 설치 명령어
 
-$ conda create -n dask_cuda -c rapidsai -c nvidia -c conda-forge dask-cuda=22.08.00=py39_g9a61ce5_0 dask-cudf=22.08.00=cuda_11_py39_gb71873c701_0 xgboost cudatoolkit=11.0 ipykernel skorch cuspatial=22.08 cuxfilter=22.08 cusignal=22.08 cucim=22.08 dask-sql xarray-spatial pycaret graphistry dash
-$ pip install dask-pytorch-ddp
+- $ conda create -n dask_cuda -c rapidsai -c nvidia -c conda-forge dask-cuda=22.08.00=py39_g9a61ce5_0 dask-cudf=22.08.00=cuda_11_py39_gb71873c701_0 xgboost cudatoolkit=11.0 ipykernel skorch cuspatial=22.08 cuxfilter=22.08 cusignal=22.08 cucim=22.08 dask-sql xarray-spatial pycaret graphistry dash
+
+- $ pip install dask-pytorch-ddp
 
 ### 4. GPU병렬처리에서 bottolenec은 TCP통신이다. NVLINK프로토콜도 나은대안인데 성능하락은 피할 수 없다. 기서버에 NVlink가 없는지라 UCX프로토콜을 통해서 성능향상을 노린다.
 - 근거자료 : https://www.dask.org/blog/experiments-in-high-performance-networking-with-ucx-and-dgx
 
-$ conda install -c rapidsai -c nvidia -c conda-forge ucx ucx-py
+- $ conda install -c rapidsai -c nvidia -c conda-forge ucx ucx-py
 
 
 
