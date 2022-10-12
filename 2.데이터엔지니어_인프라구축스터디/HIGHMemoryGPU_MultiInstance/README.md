@@ -85,17 +85,58 @@ https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html
 |MIG 2g.12gb|2/4|2/4|2|NVDECs /0 JPEG /0|OFA|2/4|2|
 |MIG 4g.24gb|Full|4/4|4|NVDECs /1 JPEG /1|OFA|Full|1|
 
+#### Table 7. GPU Instance Profiles on A100
+|Profile Name|Fraction of Memory|Fraction of SMs|Hardware Units|L2 Cache Size|Number of Instances Available|
+|------------|------------------|---------------|--------------|-------------|-----------------------------|
+|MIG 1g.5gb|1/8|1/7|0|NVDECs /0 JPEG /0 OFA|1/8|7|
+|MIG 1g.5gb+me|1/8|1/7|1|NVDEC /1 JPEG /1 OFA|1/8|1 (A single 1g profile can include media extensions)|
+|MIG 2g.10gb|2/8|2/7|1|NVDECs /0 JPEG /0 OFA|2/8|3|
+|MIG 3g.20gb|4/8|3/7|2|NVDECs /0 JPEG /0 OFA|4/8|2|
+|MIG 4g.20gb|4/8|4/7|2|NVDECs /0 JPEG /0 OFA|4/8|1|
+|MIG 7g.40gb|Full|7/7|5|NVDECs /1 JPEG /1 OFA|Full|1|
 
 ### 3. 수동관리 명령어 정리
+#### 3-1. mig 모드 확인
+- $ nvidia-smi -i 0 --query-gpu=pci.bus_id,mig.mode.current --format=csv
 
 #### 3-1. 장치확인(NV#이 포함된 항목이 표시되면, NVLINK연결됨)
 - $ nvidia-smi topo -m
 
 #### 3-2. 수동관리 명령어(root권한)
 
-$ nvidia-smi -i <GPU ID> -mig 1
+##### GPU ID에 mig 프로파일 1번 enable하기.
+- $ nvidia-smi -i <GPU ID> -mig 1
 
+##### GP1ㅗhU 인스턴스 목록 조회
+- $ sudo nvidia-smi mig -lgip
 
+##### GPU 프로파일 배치 확인하기.
+- $ sudo nvidia-smi mig -lgipp
+- GPU  0 Profile ID 19 Placements: {0,1,2,3,4,5,6}:1
+- GPU  0 Profile ID 20 Placements: {0,1,2,3,4,5,6}:1
+- GPU  0 Profile ID 14 Placements: {0,2,4}:2
+- GPU  0 Profile ID  9 Placements: {0,4}:4
+- GPU  0 Profile ID  5 Placement : {0}:4
+- GPU  0 Profile ID  0 Placement : {0}:8
+
+#### GPU 인스턴스 생성
+- $ sudo nvidia-smi mig -cgi 9,3g.20gb -C
+- 프로필 MIG 3g.20gb(ID 9)를 사용하여 GPU 0에서 GPU 인스턴스 ID 2를 성공적으로 생성했습니다.
+- 프로필 MIG 3g.20gb(ID 2)를 사용하여 GPU 0 GPU 인스턴스 ID 2에서 컴퓨팅 인스턴스 ID 0을 성공적으로 생성했습니다.
+- 프로필 MIG 3g.20gb(ID 9)를 사용하여 GPU 0에서 GPU 인스턴스 ID 1을 성공적으로 생성했습니다.
+- 프로필 MIG 3g.20gb(ID 2)를 사용하여 GPU 0 GPU 인스턴스 ID 1에서 컴퓨팅 인스턴스 ID 0을 성공적으로 생성했습니다.
+
+#### GPU 인스턴스 조회
+- $ sudo nvidia-smi mig -lgi
+
+#### 인스턴스 지오메트리
+- $ sudo nvidia-smi mig -cgi 19,14,5
+- 프로필 MIG 1g.5gb(ID 19)를 사용하여 GPU 0에서 GPU 인스턴스 ID 13을 성공적으로 생성했습니다.
+- 프로필 MIG 2g.10gb(ID 14)를 사용하여 GPU 0에서 GPU 인스턴스 ID 5를 성공적으로 생성했습니다.
+- 프로필 MIG 4g.20gb(ID 5)를 사용하여 GPU 0에서 GPU 인스턴스 ID 1을 성공적으로 생성했습니다.
+
+#### Device Enumeration
+$ ls -l /proc/driver/nvidia/capabilities/gpu0/mig/gi*
 
 ### 4. 자동관리
 
