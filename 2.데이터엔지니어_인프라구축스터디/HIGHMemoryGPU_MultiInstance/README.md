@@ -107,7 +107,7 @@ https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html
 ##### GPU ID에 mig 프로파일 1번 enable하기.
 - $ nvidia-smi -i <GPU ID> -mig 1
 
-##### GP1ㅗhU 인스턴스 목록 조회
+##### GPU 인스턴스 목록 조회
 - $ sudo nvidia-smi mig -lgip
 
 ##### GPU 프로파일 배치 확인하기.
@@ -139,4 +139,4 @@ https://docs.nvidia.com/datacenter/tesla/mig-user-guide/index.html
 $ ls -l /proc/driver/nvidia/capabilities/gpu0/mig/gi*
 
 ### 4. 자동관리
-
+https://github.com/triton-inference-server/server

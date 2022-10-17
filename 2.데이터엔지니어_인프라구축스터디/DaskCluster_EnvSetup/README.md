@@ -1,4 +1,4 @@
-# Dask-Cluster Environment Setup Guide
+# Dask-Cluster DevOps Environment Setup Guide
 
 - TargetServer_1 : CPU: Intel Xeon(Gold), GPU: A100x8, OS: RedHat7.5
 - TargetServer_2 : CPU: AMD ThreadRipper, GPU: RTX3090x4, OS: Centos7
@@ -49,8 +49,23 @@ dask-sql dash graphistry pycaret xarray-spatial
 
 ### 4. GPU병렬처리에서 bottolenec은 TCP통신이다. NVLINK프로토콜도 나은대안인데 성능하락은 피할 수 없다. 기서버에 NVlink가 없는지라 UCX프로토콜을 통해서 성능향상을 노린다.
 - 근거자료 : https://www.dask.org/blog/experiments-in-high-performance-networking-with-ucx-and-dgx
+https://docs.rapids.ai/api/dask-cuda/nightly/ucx.html
 
 - $ conda install -c rapidsai -c nvidia -c conda-forge ucx ucx-py
+
+## Dask-Cluster를 Pytorch에서 최적화해서 사용하기.
+- 참고자료 :  https://saturncloud.io/blog/combining-dask-and-py-torch-for-better-faster-transfer-learning/
+
+### torch.distributed.init_process_group
+- gpu병렬처리 작업에서 작업자가 서로 통신하고 완료하는 작업을 조정하려면 '프로세스그룹'이 필요하다.
+- 결과적으로, 프로세스 그룹을 만드는 것은 설정의 중요한 First Order이다.
+
+### dask-pytorch-ddp.dispatch.run
+- 작업자 수 및 크기와 같은 특정 Dask클러스터에 대한 정보를 검색합닏.
+- 실행하려는 작업 목록 생성(예: 클러스터의 모든 작업자에 대한 교육 작업).
+- 계산을 시작해야 한다고 표시할 때까지 이 목록을 메모리에 예약.
+- 모든 작업이 올바르게 통신할 수 있도록 필요에 따라 프로세스 그룹을 만들고      삭제.
+
 
 
 
