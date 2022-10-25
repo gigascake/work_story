@@ -38,3 +38,51 @@
 - 연마 단계
 https://github.com/elisemercury/AutoClean
 의 모든 기능을 테스트해보고 추가적으로 필요한 기능이 있으면, contributor로 활동하고, 없으면 최대한 기능을 활용해서 확장할수 있는지 여부체크.
+
+##### AutoClean 누락부분
+- (결측치처리)Deep Learning을 이용한 Imputation / Datawig
+
+
+##### Pandas와 Dask.DataFrame 성능비교
+
+테스트데이터셋(197428 rows × 16 columns)
+
+- Pandas : 221.57005
+'''
+2022-10-18 04:12:00.353 | INFO     | __main__:handle:5 - Started handling of missing values...
+2022-10-18 04:12:00.409 | INFO     | __main__:handle:10 - Found a total of 56061 missing value(s)
+2022-10-18 04:12:00.476 | INFO     | __main__:handle:15 - Started handling of NUMERICAl missing values... Method: "AUTO"
+2022-10-18 04:12:00.745 | WARNING  | __main__:_lin_regression_impute:175 - LINREG imputation failed for feature "market_id"
+2022-10-18 04:12:00.786 | WARNING  | __main__:_lin_regression_impute:175 - LINREG imputation failed for feature "order_protocol"
+2022-10-18 04:12:00.995 | WARNING  | __main__:_lin_regression_impute:175 - LINREG imputation failed for feature "estimated_store_to_consumer_driving_duration"
+2022-10-18 04:12:05.083 | DEBUG    | __main__:_impute:99 - KNN imputation of 987 value(s) succeeded for feature "market_id"
+2022-10-18 04:12:09.052 | DEBUG    | __main__:_impute:99 - KNN imputation of 995 value(s) succeeded for feature "order_protocol"
+2022-10-18 04:13:12.718 | DEBUG    | __main__:_impute:99 - KNN imputation of 16262 value(s) succeeded for feature "total_onshift"
+2022-10-18 04:14:16.376 | DEBUG    | __main__:_impute:99 - KNN imputation of 16262 value(s) succeeded for feature "total_busy"
+2022-10-18 04:15:20.009 | DEBUG    | __main__:_impute:99 - KNN imputation of 16262 value(s) succeeded for feature "total_outstanding_orders"
+2022-10-18 04:15:22.108 | DEBUG    | __main__:_impute:99 - KNN imputation of 526 value(s) succeeded for feature "estimated_store_to_consumer_driving_duration"
+2022-10-18 04:15:22.109 | INFO     | __main__:handle:47 - Started handling of Categorical missing values... Method: "AUTO"
+2022-10-18 04:15:23.090 | DEBUG    | __main__:_impute:126 - KNN imputation of 7 value(s) succeeded for feature "actual_delivery_time"
+2022-10-18 04:15:41.924 | DEBUG    | __main__:_impute:126 - KNN imputation of 4760 value(s) succeeded for feature "store_primary_category"
+2022-10-18 04:15:41.925 | INFO     | __main__:handle:73 - Completed handling of missing values in 221.57005 seconds
+'''
+
+- Dask.DataFrame 222.442516 
+'''
+2022-10-18 04:35:39.456 | INFO     | __main__:handle:5 - Started handling of missing values...
+2022-10-18 04:35:39.762 | INFO     | __main__:handle:10 - Found a total of 56061 missing value(s)
+2022-10-18 04:35:40.089 | INFO     | __main__:handle:15 - Started handling of NUMERICAl missing values... Method: "AUTO"
+2022-10-18 04:35:40.352 | WARNING  | __main__:_lin_regression_impute:175 - LINREG imputation failed for feature "market_id"
+2022-10-18 04:35:40.392 | WARNING  | __main__:_lin_regression_impute:175 - LINREG imputation failed for feature "order_protocol"
+2022-10-18 04:35:40.591 | WARNING  | __main__:_lin_regression_impute:175 - LINREG imputation failed for feature "estimated_store_to_consumer_driving_duration"
+2022-10-18 04:35:44.666 | DEBUG    | __main__:_impute:99 - KNN imputation of 987 value(s) succeeded for feature "market_id"
+2022-10-18 04:35:48.633 | DEBUG    | __main__:_impute:99 - KNN imputation of 995 value(s) succeeded for feature "order_protocol"
+2022-10-18 04:36:52.367 | DEBUG    | __main__:_impute:99 - KNN imputation of 16262 value(s) succeeded for feature "total_onshift"
+2022-10-18 04:37:56.115 | DEBUG    | __main__:_impute:99 - KNN imputation of 16262 value(s) succeeded for feature "total_busy"
+2022-10-18 04:38:59.929 | DEBUG    | __main__:_impute:99 - KNN imputation of 16262 value(s) succeeded for feature "total_outstanding_orders"
+2022-10-18 04:39:02.031 | DEBUG    | __main__:_impute:99 - KNN imputation of 526 value(s) succeeded for feature "estimated_store_to_consumer_driving_duration"
+2022-10-18 04:39:02.031 | INFO     | __main__:handle:47 - Started handling of Categorical missing values... Method: "AUTO"
+2022-10-18 04:39:02.996 | DEBUG    | __main__:_impute:126 - KNN imputation of 7 value(s) succeeded for feature "actual_delivery_time"
+2022-10-18 04:39:21.898 | DEBUG    | __main__:_impute:126 - KNN imputation of 4760 value(s) succeeded for feature "store_primary_category"
+2022-10-18 04:39:21.899 | INFO     | __main__:handle:73 - Completed handling of missing values in 222.442516 seconds
+'''
