@@ -86,3 +86,15 @@ https://github.com/elisemercury/AutoClean
 2022-10-18 04:39:21.898 | DEBUG    | __main__:_impute:126 - KNN imputation of 4760 value(s) succeeded for feature "store_primary_category"
 2022-10-18 04:39:21.899 | INFO     | __main__:handle:73 - Completed handling of missing values in 222.442516 seconds
 '''
+
+
+- Dask.DataFrame에 Pandas와의 호환성문제가 있어서 사용을 보류한다. Pandas와 호환성문제, map 관련 처리에서 오류가 존재함.
+
+### 신규 패키지 테스트 
+- multi_processing_benchmark.ipynb 파일에 정리되어있으며, 요약하면 다음과같다.
+- run_prophet 수행시간 : 12m 23.92s
+- multiprocessing 수행시간 : multiprocessing : 12m 44.41s
+- concurrent.futures 수행시간 : concurrent futures : 12m 45.42s
+- ray 수행시간 : Ray : 39s
+#### 미친 수행속도 : 10일걸리던 125기가 데이터전처리 자동화작업이 10분만에 끝난다.
+#### 결론 : Ray생태계를 확실히 파악해서 내것으로 만들자.
