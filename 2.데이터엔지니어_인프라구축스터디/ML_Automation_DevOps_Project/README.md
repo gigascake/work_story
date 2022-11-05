@@ -98,3 +98,6 @@ https://github.com/elisemercury/AutoClean
 - ray 수행시간 : Ray : 39s
 #### 미친 수행속도 : 10일걸리던 125기가 데이터전처리 자동화작업이 10분만에 끝난다.
 #### 결론 : Ray생태계를 확실히 파악해서 내것으로 만들자.
+
+https://www.youtube.com/watch?v=cEF3ok1mSo0
+https://docs.ray.io/en/master/ray-air/examples/index.html
